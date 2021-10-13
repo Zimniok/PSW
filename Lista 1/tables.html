@@ -21,7 +21,7 @@
       <table>
 
 
-         <caption><strong>Czasy i temperatury parzenia różnych herbat</strong></caption>
+         <caption><p><strong>Czasy i temperatury parzenia różnych herbat</strong></p></caption>
 
          <thead>
             <tr>
@@ -72,12 +72,12 @@
       </table>
 
       <br>
-      <a href="pliki/czasy_temperatury_parzenia.xlsx">Link do tabeli w excelu</a>
-
-      <h1>Table Example: Spanning Rows and Columns</h1>
+      <p><a href="pliki/czasy_temperatury_parzenia.xlsx">Link do tabeli w excelu</a><p>
+      <!--<a href="ftp://demo@test.rebex.net/pub/example/imap-console-client.png">Pobieranie ftp</a>!-->
+      <br>
 
       <table>
-         <caption>A more complex sample table</caption>
+         <caption><p>Informacje na temat herbat</p></caption>
 
          <thead>
             <!-- rowspans and colspans merge the specified -->
@@ -85,37 +85,67 @@
             <tr>
                <!-- merge two rows -->
                <th rowspan = "2">
-                  <img src = "camel.png" width = "205"
-                     height = "167" alt = "Picture of a one-hump camel">
+                  <img src = "pliki/liscie.webp" alt = "Zdjęcie suszenia herbaty">
                </th>
 
                <!-- merge four columns -->
-               <th colspan = "4">
-                  <strong>Camelid comparison</strong><br>
-                  Approximate as of 6/2011
+               <th colspan = "3">
+                  <strong>Porównanie 3 rodzajów herbaty</strong><br>
+                  białej, zielonej i czrnej
                </th>
             </tr>
             <tr>
-               <th># of humps</th>
-               <th>Indigenous region</th>
-               <th>Spits?</th>
-               <th>Produces wool?</th>
+               <th>Biała herbata</th>
+               <th>Zielona herbata</th>
+               <th>Czarna herbata</th>
             </tr>
          </thead>
          <tbody>
             <tr>
-               <th>Camels (bactrian)</th>
-               <td>2</td>
-               <td>Africa/Asia</td>
-               <td>Yes</td>
-               <td>Yes</td>
+              <th>Zawartość kofeiny na porcję</th>
+               <td colspan = "3" rowspan = "5">
+                 <table>
+                   <tbody>
+                     <tr>
+                       <td>15 mg</td>
+                       <td>40 mg</td>
+                       <td>20 mg</td>
+                     </tr>
+                     <tr>
+                       <td>16.23-25.95</td>
+                       <td>13.7-24.7</td>
+                       <td>8.3-24.8</td>
+                     </tr>
+                     <tr>
+                       <td>Bez fermentacji</td>
+                       <td>Któtka fermentacja</td>
+                       <td>Długa fermentacja</td>
+                     </tr>
+                     <tr>
+                       <td>Słodki</td>
+                       <td>Słodko-gorzki</td>
+                       <td>Gorzki</td>
+                     </tr>
+                     <tr>
+                       <td>Jasny żółty</td>
+                       <td>Zielony albo żółty</td>
+                       <td>Czarny albo czerwony</td>
+                     </tr>
+                   </tbody>
+                 </table>
+               </td>
             </tr>
             <tr>
-               <th>Llamas</th>
-               <td>1</td>
-               <td>Andes Mountains</td>
-               <td>Yes</td>
-               <td>Yes</td>
+              <th>Polifenole/100g</th>
+            </tr>
+            <tr>
+              <th>Przygotowanie</th>
+            </tr>
+            <tr>
+              <th>Smak</th>
+            </tr>
+            <tr>
+              <th>Kolor</th>
             </tr>
          </tbody>
       </table>
