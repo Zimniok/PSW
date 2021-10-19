@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+   <head>
+      <meta charset = "utf-8">
+      <title>Formularz osobowy</title>
+
+      <meta name = "keywords" content = "herbata, formularz osobowy">
+      <meta name = "description" content = "Na tej stronie znajduje się
+      formularz osobowy.">
+   </head>
+
+   <body>
+     <h1>Formularz osobowy</h1>
+
+
+     <form>
+
+        <p><label>Imie:&emsp;
+              <input name = "name" type = "text" size = "25"
+                 maxlength = "30" autofocus>
+        </label></p>
+
+        <p><label>Nazwisko:&emsp;
+              <input name = "surname" type = "text" size = "25"
+                 maxlength = "30" required>
+        </label></p>
+
+        <p><label>Miesiąc urodzin:&emsp;
+              <input list="birthmonth" id="birthmonthInput" name="birthmonthInput" />
+              <datalist id = "birthmonth">
+                <option value="Styczeń">
+                <option value="Luty">
+                <option value="Marzec">
+                <option value="Kwiecień">
+                <option value="Maj">
+                <option value="Czerwiec">
+                <option value="Lipiec">
+                <option value="Sierpień">
+                <option value="Wrzesień">
+                <option value="Październik">
+                <option value="Listopad">
+                <option value="Grudzień">
+              </datalist>
+        </label></p>
+
+        <p><label>Adres mailowy:&emsp;
+              <input name = "email" type = "email" size = "25"
+                required>
+        </label></p>
+
+        <p><label>Telefon:&emsp;
+              <input name = "phonenr" type = "tel" size = "25"
+                 pattern="\+[1-9]{1}[0-9]{1,3}[0-9]{9}">
+        </label></p>
+
+        <p>
+           <input type = "submit" value = "Wyślij">
+           <input type = "reset" value = "Wyczyść">
+        </p>
+
+      </form>
+   </body>
+</html>
