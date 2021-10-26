@@ -1,0 +1,16 @@
+body {
+  font-size: 1.5em;
+}
+
+h1 {
+  background-color: lightgreen;
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 30pt;
+}
+
+footer {
+  font-size: 75%;
+}
