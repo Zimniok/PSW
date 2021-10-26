@@ -1,5 +1,6 @@
 body {
   font-size: 1.5em;
+  background: linear-gradient(to top, #ebebeb 50%, #fff 50%) no-repeat;
 }
 
 h1 {
