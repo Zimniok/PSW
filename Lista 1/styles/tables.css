@@ -1,0 +1,22 @@
+
+
+section > table:first-of-type {
+  border-width: thick;
+  border-style: dotted;
+  border-color: #ae48f7;
+}
+
+section > table:last-of-type {
+  border-spacing: 20px;
+  border-style: dotted dashed;
+  border-color: #ae48f7;
+}
+
+section > table:last-of-type >thead th {
+  border-spacing: 20px;
+  border-style: dotted dashed;
+}
+
+td {
+  border-style: groove;
+}

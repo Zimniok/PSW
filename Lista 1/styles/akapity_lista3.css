@@ -15,3 +15,25 @@ h3 {
 footer {
   font-size: 75%;
 }
+
+body > section > article:nth-child(2) {
+  font-weight: 600;
+}
+
+body > section > article:nth-child(3) > p {
+  font-style: italic;
+}
+
+body > section > article:nth-last-child(3) > p {
+  font-variant: small-caps;
+  line-height: 0.75em;
+  font-family: fantasy;
+}
+
+p {
+  color: black;
+}
+
+:not(p) {
+  color: grey;
+}

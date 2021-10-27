@@ -3,3 +3,32 @@ body {
   background-size: 1920px 1080px;
   background-repeat: no-repeat;
 }
+
+.guzik {
+  padding: 10px
+}
+
+.guzik:active{
+  background-color: lightblue;
+}
+
+input:focus {
+  background-color: lightgreen;
+}
+
+input:required {
+  background-color: #f748ab;
+}
+
+input:disabled {
+  background-color: #f7a248;
+}
+
+input:enabled {
+  border-color: green;
+  border-radius: 3px;
+}
+
+textarea:empty{
+  background-color: lightyellow;
+}

@@ -33,13 +33,18 @@
 
         <p><label>Nazwisko:&emsp;
                <input name = "surname" type = "text" size = "25"
-                  maxlength = "30">
+                  maxlength = "30" required>
          </label></p>
 
         <p><label>Zainteresowania:&emsp;
                <input name = "intrests" type = "text" size = "25"
                   maxlength = "50">
          </label></p>
+
+         <p><label>Disabled:&emsp;
+                <input name = "disabled" type = "text" size = "25"
+                   maxlength = "50" disabled>
+          </label></p>
 
         <p>
             <label>Ulubiony rodzaj herbaty:&emsp;
@@ -80,8 +85,8 @@
         </label></p>
 
         <p>
-            <input type="submit" value="Wyślij">
-            <input type="reset" value="Wyczyść">
+            <input type="submit" value="Wyślij" class="guzik">
+            <input type="reset" value="Wyczyść" class="guzik">
         </p>
     </form>
 
