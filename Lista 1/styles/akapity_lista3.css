@@ -37,3 +37,23 @@ p {
 :not(p) {
   color: grey;
 }
+
+.linear_grad {
+  background-image: linear-gradient(45deg, lightblue, lightgreen);
+}
+
+.linear_grad2 {
+  background-image: linear-gradient(blue, violet);
+}
+
+.linear_grad2 p {
+  color: white;
+}
+
+.radial_grad {
+  background-image: radial-gradient(lightblue, lightgreen, lightyellow);
+}
+
+.radial_grad2 {
+  background-image: radial-gradient(circle, #c76a63, #c7a263);
+}
