@@ -20,3 +20,30 @@ section > table:last-of-type >thead th {
 td {
   border-style: groove;
 }
+
+#border_img1 {
+  border: 9px solid transparent;
+  padding: 9px;
+  border-image-source: url("../pliki/border_img.png");
+  border-image-repeat: stretch;
+  border-image-slice: 9;
+  display: inline-block;
+}
+
+#border_img2 {
+  border: 9px solid transparent;
+  padding: 9px;
+  border-image-source: url("../pliki/border_img.png");
+  border-image-repeat: round;
+  border-image-slice: 9;
+  display: inline-block;
+}
+
+#border_img3 {
+  border: 9px solid transparent;
+  padding: 9px;
+  border-image-source: url("../pliki/border_img.png");
+  border-image-repeat: space;
+  border-image-slice: 13;
+  display: inline-block;
+}
