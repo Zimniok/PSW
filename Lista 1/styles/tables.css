@@ -47,3 +47,41 @@ td {
   border-image-slice: 13;
   display: inline-block;
 }
+
+#fblm {
+  margin: 50px 0;
+  width: 350px;
+  display: flex;
+  align-items: stretch;
+}
+
+.column {
+  border: 1px dotted lightblue;
+  padding: 5px;
+  flex-grow: 1;
+  -webkit-flex-grow: 1;
+}
+
+.column:hover {
+  flex-grow: 1.5;
+  -webkit-flex-grow: 1.5;
+  background-color: lightgreen;
+}
+
+@media screen and (min-width: 1000px) {
+  #responsywna_tabela {
+    width: 1000px;
+    column-count: 4;
+    column-gap: 15px;
+    column-rule: 4px dashed #aa00ff;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  #responsywna_tabela {
+    width: 800px;
+    column-count: 3;
+    column-gap: 15px;
+    column-rule: 4px dashed #aa00ff;
+  }
+}

@@ -127,10 +127,14 @@ body > section > nav > a > img {
     height: 200px;
   }
 
+  50% {
+    width: 225px;
+    height: 150px;
+  }
+
   to {
     width: 150px;
     height: 100px;
-    transform: translate(-50%, 50%);
   }
 }
 
@@ -140,4 +144,12 @@ p:only-child {
 
 :target h2{
   font-size: 3em;
+}
+
+h2 {
+  transition: font-size 1s;
+  -webkit-transition: font-size 1s;
+  -moz-transition: font-size 1s;
+  -o-transition: font-size 1s;
+  -ms-transition: font-size 1s;
 }

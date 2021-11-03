@@ -63,3 +63,27 @@ p {
 .radial_grad2 {
   background-image: radial-gradient(circle, #c76a63, #c7a263);
 }
+
+#obrazki {
+  transform: translateY(100px);
+}
+
+#przenikanie1 {
+  transform: scale(0.8, 0.8) rotateZ(20deg) translateX(20px) skew(5deg, 5deg);
+}
+
+#przenikanie2 {
+  transform: translateX(-100px);
+  opacity: 0.75;
+}
+
+.crossfade {
+  width: 300px;
+  height: 300px;
+  background-image: -webkit-cross-fade(50%
+      url('pliki/square_crossfade.png'),
+      url('pliki/circle_crossfade.png'));
+  background-image: cross-fade(50%
+      url('pliki/square_crossfade.png'),
+      url('pliki/circle_crossfade.png'));
+}
