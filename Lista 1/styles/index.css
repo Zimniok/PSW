@@ -114,6 +114,26 @@ body > section > nav > a > img {
   top: 20px;
 }
 
+.animated_img {
+  animation-duration: 1s;
+  animation-name: popin;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes popin {
+  from {
+    width: 300px;
+    height: 200px;
+  }
+
+  to {
+    width: 150px;
+    height: 100px;
+    transform: translate(-50%, 50%);
+  }
+}
+
 p:only-child {
   color: red;
 }
