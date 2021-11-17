@@ -14,40 +14,40 @@
 </head>
 
 <body>
-  <section>
-    <h1>Ankieta herbaciana</h1>
+    <section>
+        <h1>Ankieta herbaciana</h1>
 
-    <details>
-      <summary>Inforacje</summary>
-      Informacje z tej ankiety są wykorzystywane tylko w celach statystycznych.
-    </details>
+        <details>
+            <summary>Inforacje</summary>
+            Informacje z tej ankiety są wykorzystywane tylko w celach statystycznych.
+        </details>
 
-    <br>
+        <br>
 
-    <form>
+        <form>
 
-        <p><label>Imię:&emsp;
+            <p><label>Imię:&emsp;
                <input name = "name" type = "text" size = "25"
                   maxlength = "30">
          </label></p>
 
-        <p><label>Nazwisko:&emsp;
-               <input name = "surname" type = "text" size = "25"
+            <p><label>Nazwisko:&emsp;
+               <input name = "surname" type = "text" size = "25" id="surname"
                   maxlength = "30" required>
          </label></p>
 
-        <p><label>Zainteresowania:&emsp;
+            <p><label>Zainteresowania:&emsp;
                <input name = "intrests" type = "text" size = "25"
                   maxlength = "50">
          </label></p>
 
-         <p><label>Disabled:&emsp;
+            <p><label>Disabled:&emsp;
                 <input name = "disabled" type = "text" size = "25"
                    maxlength = "50" disabled>
           </label></p>
 
-        <p>
-            <label>Ulubiony rodzaj herbaty:&emsp;
+            <p>
+                <label>Ulubiony rodzaj herbaty:&emsp;
             <select name="ulubiona_herbata">
               <optgroup label="basic">
                 <option value="czarna">Czarna</option>
@@ -61,41 +61,42 @@
               </optgroup>
             </select>
           </label>
-        </p>
+            </p>
 
-        <fieldset style="display:inline-block;">
-            <legend>Ulubiony napar:</legend>
-            <label>&ensp;Ziołowy <input type="radio" name="ulubiony_napar" value="ziolowy"></label>
-            <label>&ensp;Owocowy <input type="radio" name="ulubiony_napar" value="owocowy"></label>
-            <label>&ensp;Yerba Mate <input type="radio" name="ulubiony_napar" value="yerba"></label>
-        </fieldset>
+            <fieldset style="display:inline-block;">
+                <legend>Ulubiony napar:</legend>
+                <label>&ensp;Ziołowy <input type="radio" name="ulubiony_napar" value="ziolowy"></label>
+                <label>&ensp;Owocowy <input type="radio" name="ulubiony_napar" value="owocowy"></label>
+                <label>&ensp;Yerba Mate <input type="radio" name="ulubiony_napar" value="yerba"></label>
+            </fieldset>
 
-        <br>
+            <br>
 
-        <fieldset style="display:inline-block;">
-            <legend>Najlepszy czas na herbatę:</legend>
-            <label>&ensp;Poranek <input type="checkbox" name="poranek" value="poranek"></label>
-            <label>&ensp;Południe <input type="checkbox" name="poludnie" value="poludnie"></label>
-            <label>&ensp;Wieczór <input type="checkbox" name="poranek" value="poranek"></label>
-            <label>&ensp;Noc <input type="checkbox" name="noc" value="noc"></label>
-        </fieldset>
+            <fieldset style="display:inline-block;">
+                <legend>Najlepszy czas na herbatę:</legend>
+                <label>&ensp;Poranek <input type="checkbox" name="poranek" value="poranek"></label>
+                <label>&ensp;Południe <input type="checkbox" name="poludnie" value="poludnie"></label>
+                <label>&ensp;Wieczór <input type="checkbox" name="poranek" value="poranek"></label>
+                <label>&ensp;Noc <input type="checkbox" name="noc" value="noc"></label>
+            </fieldset>
 
-        <p><label>Dodatkowy komentarz:
+            <p><label>Dodatkowy komentarz:
           <br><textarea name="komentarz" rows="8" cols="80" maxlength="200"></textarea>
         </label></p>
 
-        <p>
-            <input type="submit" value="Wyślij" class="guzik">
-            <input type="reset" value="Wyczyść" class="guzik">
-        </p>
-    </form>
+            <p>
+                <input type="submit" value="Wyślij" class="guzik" id="guzik">
+                <input type="reset" value="Wyczyść" class="guzik">
+            </p>
+        </form>
 
-    <p><a href="mailto:abc@example.com">Kontakt mailowy</a></p>
+        <p><a href="mailto:abc@example.com">Kontakt mailowy</a></p>
 
-    <footer>
-      <p>© 2021 Świat herbaty</p>
-    </footer>
-  </section>
+        <footer>
+            <p>© 2021 Świat herbaty</p>
+        </footer>
+    </section>
+    <script src="js/forms.js"></script>
 </body>
 
 </html>
