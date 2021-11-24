@@ -1,8 +1,8 @@
 const check = document.getElementById("validate");
-const submit = document.getElementById("guzik");
+const form = document.getElementById("form");
 const surnameField = document.getElementById("surname");
 const textFields = document.querySelectorAll('input[type="text"]')
-submit.addEventListener("submit", showMessage);
+form.addEventListener("submit", showMessage);
 // window.alert('Na tej stronie jest: ' + document.forms.length + ' formularz')
 
 textFields.forEach(element => {
