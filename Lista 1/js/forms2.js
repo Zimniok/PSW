@@ -1,6 +1,8 @@
 const background = document.querySelector('#backgroundColor');
 const fontColor = document.querySelector('#fontColor');
 const fontFamily = document.querySelector('#fontType');
+window.alert('Na tej stronie jest: ' + document.forms.length + ' formularz')
+
 
 background.addEventListener('change', changeBackground);
 fontColor.addEventListener('change', changeFontColor);

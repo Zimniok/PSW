@@ -1,15 +1,30 @@
 const check = document.getElementById("validate");
 const submit = document.getElementById("guzik");
 const surnameField = document.getElementById("surname");
-submit.addEventListener("click", showMessage);
+const textFields = document.querySelectorAll('input[type="text"]')
+submit.addEventListener("submit", showMessage);
+// window.alert('Na tej stronie jest: ' + document.forms.length + ' formularz')
+
+textFields.forEach(element => {
+    element.addEventListener('mouseover', function() {
+        element.style.background = "purple"
+    })
+    element.addEventListener('blur', function() {
+        element.style.background = "white"
+    })
+    element.addEventListener('focus', function() {
+        element.style.background = "yellow"
+    })
+})
 
 function showMessage() {
     if (surnameField.value) {
         document.writeln("Formularz został przesłany pomyślnie");
-        window.addEventListener("mousedown", refresh);
     } else {
         window.alert("Uzupełnij wymagane pola!");
     }
+    window.addEventListener("mousedown", refresh);
+    event.preventDefault()
 }
 
 function refresh() {
