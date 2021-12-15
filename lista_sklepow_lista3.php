@@ -1,3 +1,12 @@
+<?php
+
+include($_SERVER['DOCUMENT_ROOT'] . '/psw/View.php');
+
+use View as View;
+
+$view = new \View\View($_COOKIE);
+
+?>
 <!DOCTYPE html>
 
 <html lang="pl">
@@ -9,6 +18,7 @@
     herbata">
     <meta name = "description" content = "Na tej stronie znajduje się lista
     popularnych sklepów">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
       ul {
@@ -22,6 +32,8 @@
   </head>
 
   <body>
+  <?php $view->render(); ?>
+
     <section>
       <h1 style="font-style: italic;">Lista popularnych sklepów</h1>
       <p>

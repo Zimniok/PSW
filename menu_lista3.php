@@ -1,3 +1,12 @@
+<?php
+
+include($_SERVER['DOCUMENT_ROOT'] . '/psw/View.php');
+
+use View as View;
+
+$view = new \View\View($_COOKIE);
+
+?>
 <!DOCTYPE html>
 
 <html lang="pl">
@@ -9,11 +18,14 @@
     <meta name="keywords" content="Menu, template">
     <meta name="description" content="Na tej stronie znajduje się
       template rozwijanego menu.">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="styles/menu_lista3.css">
 </head>
 
 <body>
+<?php $view->render(); ?>
+
     <div class="dropdown">
         <button class="menu_start_entry">Menu</button>
         <div class="main_dropdown_content dropdown-content">

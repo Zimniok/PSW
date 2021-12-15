@@ -1,9 +1,19 @@
+<?php
+
+include($_SERVER['DOCUMENT_ROOT'] . '/psw/View.php');
+
+use View as View;
+
+$view = new \View\View($_COOKIE);
+
+?>
 <!DOCTYPE html>
 
 <html lang="pl">
    <head>
       <meta charset = "utf-8">
       <title>Formularz osobowy</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
       <meta name = "keywords" content = "herbata, formularz osobowy">
       <meta name = "description" content = "Na tej stronie znajduje się
@@ -12,6 +22,8 @@
 
    <body>
      <section>
+    <?php $view->render(); ?>
+
        <h1>Formularz osobowy</h1>
        <aside>
          <p>Administratorem danych osobowy jest firma Świat herbaty</p>

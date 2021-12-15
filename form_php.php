@@ -3,6 +3,10 @@ const REGEX = '/[0-9]{2}-[0-9]{3}/';
 
 $fieldNames = array('name', 'surname', 'phone', 'city', 'zip', 'street', 'number', 'building', 'tea');
 $messages = [];
+$temp;
+settype($temp, 'integer');
+$temp = 5;
+// $int = 5;
 if ($_POST) {
 	foreach ($fieldNames as $key => $name) {
 		if ($name == 'zip') {
@@ -12,11 +16,14 @@ if ($_POST) {
 				$_POST[$name] = 'error';
 			}
 		}
+		if ($name == 'phone') {
+			$_POST[$name] = intval($_POST[$name]);
+		}
 		$messages[$name] = $_POST[$name];
 	}
 	$count = count($messages);
 	for ($i = 0; $i < $count; $i++) {
-		echo key($messages) . ' = ' . $messages[$fieldNames[$i]] . "<br>";
+		echo key($messages) . ":\t " . $messages[$fieldNames[$i]] . "<br>";
 		next($messages);
 		if ($i == $count - 2) {
 			reset($messages);

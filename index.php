@@ -1,3 +1,21 @@
+<?php
+
+include($_SERVER['DOCUMENT_ROOT'] . '/psw/View.php');
+
+use View as View;
+
+if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+    session_start();
+    session_destroy();
+    session_unset();
+    session_write_close();
+    // setcookie('PHPSESSID', "", 0);
+}
+
+$view = new \View\View($_COOKIE);
+
+
+?>
 <!DOCTYPE html>
 
 <html lang="pl">
@@ -10,12 +28,16 @@
       czarna herbata, biala herbata, rodzaje herbat, informacje">
     <meta name="description" content="Na tej stronie znajdują się
       informacje dotyczące róznych rodzajów herbaty.">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
+    <?php $view->render(); ?>
+
     <h1 id="tytul">Welcome to Our Website!</h1>
+
+
     <span id="greeting"></span>
     <p id="dsc">Ta strona została stworzona aby przybliżyć właściowści i sposoby zaparzania różnych rodzajów <b>herbaty</b>.</p>
 
@@ -23,20 +45,20 @@
 
     <section class="limited_width_section">
         <nav>
-            <a href="tables.html"><img src="pliki/zaparzanie.webp" alt="Zaparzanie" height="200" width="300" class="animated_img"></a>
+            <a href="tables.php"><img src="pliki/zaparzanie.webp" alt="Zaparzanie" height="200" width="300" class="animated_img"></a>
             <ul>
-                <li><a href="tables.html">Zaparzanie</a></li>
-                <li><a href="form.html">Amkieta herbatowa</a></li>
-                <li><a href="form_lista2.html">Formularz osobowy</a></li>
-                <li><a href="form_dodatkowy_lista2.html">Formularz dodatkowy</a></li>
+                <li><a href="tables.php">Zaparzanie</a></li>
+                <li><a href="form.php">Amkieta herbatowa</a></li>
+                <li><a href="form_lista2.php">Formularz osobowy</a></li>
+                <li><a href="form_dodatkowy_lista2.php">Formularz dodatkowy</a></li>
                 <li><a href="form_php.php">Formularz do PHP</a></li>
                 <li>CSS
                     <ul>
-                        <li><a href="tables.html">Tabele</a></li>
-                        <li><a href="lista_sklepow_lista3.html">Lista sklepów</a></li>
-                        <li><a href="akapity_lista3.html">Akapity</a></li>
-                        <li><a href="form.html">Formularz</a></li>
-                        <li><a href="menu_lista3.html">Menu</a></li>
+                        <li><a href="tables.php">Tabele</a></li>
+                        <li><a href="lista_sklepow_lista3.php">Lista sklepów</a></li>
+                        <li><a href="akapity_lista3.php">Akapity</a></li>
+                        <li><a href="form.php">Formularz</a></li>
+                        <li><a href="menu_lista3.php">Menu</a></li>
                     </ul>
                 </li>
             </ul>

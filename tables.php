@@ -1,3 +1,12 @@
+<?php
+
+include($_SERVER['DOCUMENT_ROOT'] . '/psw/View.php');
+
+use View as View;
+
+$view = new \View\View($_COOKIE);
+
+?>
 <!DOCTYPE html>
 
 <html lang="pl">
@@ -9,12 +18,15 @@
     <meta name="keywords" content="herbaty, parzenie, tabele">
     <meta name="description" content="Na tej stronie znajdują się
       informacje dotyczące parzenia herbaty.">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="styles/tables.css">
 
 </head>
 
 <body>
+<?php $view->render(); ?>
+
     <section>
         <h1>Informacje na temat parzenia herbaty</h1>
         <table>
@@ -34,42 +46,42 @@
 
             <tbody id="tbody">
                 <tr>
-                    <th><a href="index.html#Herbata_czarna">Herbata czarna</a></th>
+                    <th><a href="index.php#Herbata_czarna">Herbata czarna</a></th>
                     <td>95&#8451; - 100&#8451;</td>
                     <td>203&#8457; - 212&#8457;</td>
                     <td><meter min="0" max="100" high="90" low="70" value="95"></meter></td>
                     <td>4 - 5 minut</td>
                 </tr>
                 <tr>
-                    <th><a href="index.html#Herbata_zielona">Herbata zielona</a></th>
+                    <th><a href="index.php#Herbata_zielona">Herbata zielona</a></th>
                     <td>70&#8451; - 80&#8451;</td>
                     <td>158&#8457; - 176&#8457;</td>
                     <td><meter min="0" max="100" high="90" low="70" value="75"></meter></td>
                     <td>2 - 3 minut</td>
                 </tr>
                 <tr>
-                    <th><a href="index.html#Herbata_biala">Herbata biała</a></th>
+                    <th><a href="index.php#Herbata_biala">Herbata biała</a></th>
                     <td>60&#8451; - 80&#8451;</td>
                     <td>140&#8457; - 176&#8457;</td>
                     <td><meter min="0" max="100" high="90" low="70" value="70"></meter></td>
                     <td>2 - 3 minut</td>
                 </tr>
                 <tr>
-                    <th><a href="index.html#Herbata_zolta">Herbata żółta</a></th>
+                    <th><a href="index.php#Herbata_zolta">Herbata żółta</a></th>
                     <td>80&#8451; - 85&#8451;</td>
                     <td>176&#8457; - 185&#8457;</td>
                     <td><meter min="0" max="100" high="90" low="70" value="83"></meter></td>
                     <td>1 - 3 minut</td>
                 </tr>
                 <tr>
-                    <th><a href="index.html#Herbata_pu-erh">Herbata pu-erh</a></th>
+                    <th><a href="index.php#Herbata_pu-erh">Herbata pu-erh</a></th>
                     <td>85&#8451; - 90&#8451;</td>
                     <td>185&#8457; - 194&#8457;</td>
                     <td><meter min="0" max="100" high="90" low="70" value="88"></meter></td>
                     <td>1 - 3 minut</td>
                 </tr>
                 <tr>
-                    <th><a href="index.html#Herbata_ulong">Herbata ulong</a></th>
+                    <th><a href="index.php#Herbata_ulong">Herbata ulong</a></th>
                     <td>90&#8451; - 96&#8451;</td>
                     <td>194&#8457; - 204&#8457;</td>
                     <td><meter min="0" max="100" high="90" low="70" value="93"></meter></td>
