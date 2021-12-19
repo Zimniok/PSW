@@ -19,8 +19,11 @@ if ($_POST) {
 		}
 	}
 }
+$DBManager->getData();
+
 
 $view = new \View\View($_COOKIE);
+
 
 ?>
 <!DOCTYPE html>

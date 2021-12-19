@@ -1,6 +1,16 @@
 <?php
 
+use DBManager\DBManager;
+
 include($_SERVER['DOCUMENT_ROOT'] . '/psw/View.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/psw/DB/DBManager.php');
+
+$DBManager = new DBManager();
+$DBManager->register('user1','password','user1','3','3');
+
+// echo '<pre>';
+// var_dump($DBManager->login('user1', 'password'));
+// echo '</pre>';
 
 use View as View;
 
@@ -9,7 +19,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     session_destroy();
     session_unset();
     session_write_close();
-    // setcookie('PHPSESSID', "", 0);
 }
 
 $view = new \View\View($_COOKIE);

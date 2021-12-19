@@ -22,9 +22,17 @@
 		</li>
 		<li class="nav-item">
 			<?php if (isset($_SESSION['login'])) : ?>
+				<a class="nav-link" href="all_users.php">Użytkownicy</a>
+			<?php endif; ?>
+
+		</li>
+		<li class="nav-item">
+			<?php if (isset($_SESSION['login'])) : ?>
+				<a class="nav-link" href="/psw/user_data.php">Zmień dane</a>
 				<a class="nav-link" href="/psw/index.php?action=logout">Wyloguj się</a>
 			<?php else : ?>
 				<a class="nav-link" href="login.php">Zaloguj się</a>
+				<a class="nav-link" href="register.php">Zarejestruj się</a>
 			<?php endif; ?>
 
 		</li>

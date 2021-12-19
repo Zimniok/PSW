@@ -9,18 +9,12 @@ include($_SERVER['DOCUMENT_ROOT'] . '/psw/DB/DBManager.php');
 $DBManager = new DBManager();
 
 if ($_POST) {
-	$login = $_POST['login'];
-	$password = $_POST['password'];
-	if ($DBManager->login($login, $password)) {
-		$data = $DBManager->getData($login);
-		session_start();
-		foreach ($data as $key => $value) {
-			$_SESSION[$key] = $value;
-		}
-	}
+	extract($_POST);
+	$message = $DBManager->register($login, $password, $email, $name, $surname);
 }
 
 $view = new \View\View($_COOKIE);
+
 
 ?>
 <!DOCTYPE html>
@@ -40,7 +34,7 @@ $view = new \View\View($_COOKIE);
 
 <body>
 	<?php $view->render(); ?>
-
+	<span><?= isset($message) ? $message : '' ?></span>
 	<form class="needs-validation" method="POST">
 		<div class="form-row">
 			<div class="col-md-4 mb-3">
@@ -54,8 +48,26 @@ $view = new \View\View($_COOKIE);
 				<input type="password" class="form-control" name="password" id="validationTooltip02" placeholder="Hasło" required>
 			</div>
 		</div>
+		<div class="form-row">
+			<div class="col-md-4 mb-3">
+				<label for="validationTooltip02">E-mail</label>
+				<input type="email" class="form-control" name="email" id="validationTooltip02" placeholder="Email" required>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col-md-4 mb-3">
+				<label for="validationTooltip02">Imię</label>
+				<input type="text" class="form-control" name="name" id="validationTooltip02" placeholder="Hasło" required >
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="col-md-4 mb-3">
+				<label for="validationTooltip02">Nazwisko</label>
+				<input type="text" class="form-control" name="surname" id="validationTooltip02" placeholder="Hasło" required >
+			</div>
+		</div>
 
-		<input type="submit" class="btn btn-primary" value="Zaloguj">
+		<input type="submit" class="btn btn-primary" value="Zarejestruj">
 	</form>
 </body>
 
