@@ -34,8 +34,9 @@
             </h:inputText>
             <h:message for="emailInputText" styleClass="error"/>
             <h:outputText value="Miesiąc urodzenia:"/>
-            <h:selectOneMenu id="month" requiredMessage="Wybierz miesiąc urodzenia"
-                             validatorMessage="Wybierz miesiąc urodzenia!!!">
+            <h:selectOneMenu id="month" required="true" requiredMessage="Wybierz miesiąc urodzenia"
+                             validatorMessage="Wybierz miesiąc urodzenia!!!"
+                             value="#{validationBean.month}">
                 <f:selectItem itemLabel="Wybierz" itemValue="" noSelectionOption="true"/>
                 <f:selectItem itemLabel="Styczeń" itemValue="Styczeń"/>
                 <f:selectItem itemLabel="Luty" itemValue="Luty"/>
@@ -53,7 +54,8 @@
             </h:selectOneMenu>
             <h:message for="month" styleClass="error"/>
             <h:outputText value="Płeć"/>
-            <h:selectOneRadio id="gender" requiredMessage="Wybierz plec">
+            <h:selectOneRadio id="gender" required="true" requiredMessage="Wybierz plec"
+                              value="#{validationBean.gender}">
                 <f:selectItem itemLabel="Mężczyzna" itemValue="M"/>
                 <f:selectItem itemLabel="Kobieta" itemValue="K"/>
             </h:selectOneRadio>
@@ -64,9 +66,27 @@
                value="#{validationBean.phone}"
                validatorMessage="Invalid phone number format">
                <f:validateRegex pattern=
-                  "((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" />
+                  "(\+\d{2,4})?\d{9}" />
             </h:inputText>
             <h:message for="phoneInputText" styleClass="error"/>
+            <h:outputText value="Ulubiona herbata"/>
+            <h:inputText id="herbataInput" required="true" validator="HerbataValidator"
+                         requiredMessage="Podaj ulubioną herbatę" value="#{validationBean.tea}"/>
+            <h:message for="herbataInput"/>
+            <h:outputText value="Wiek:"/>
+            <h:inputText id="wiekInput" requiredMessage="Podaj wiek" required="true"
+                         validatorMessage="Wiek nie znajduje się w przedziale 10-100"
+                         value="#{validationBean.age}">
+                <f:validateLongRange minimum = "10" maximum = "100"/>
+            </h:inputText>
+            <h:message for="wiekInput"/>
+            <h:outputText value="Budżet na herbatę:"/>
+            <h:inputText id="budzetInput" requiredMessage="Podaj budżet" required="true"
+                         validatorMessage="Budżet nie znajduje się w rozsądnym przedziale"
+                         value="#{validationBean.budget}">
+                <f:validateDoubleRange minimum = "10.75" maximum = "99.99"/>
+            </h:inputText>
+            <h:message for="budzetInput"/>
          </h:panelGrid>
          <h:commandButton value="Submit"/>
          <h:outputText escape="false" value="#{validationBean.result}"/>

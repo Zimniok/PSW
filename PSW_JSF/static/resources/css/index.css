@@ -1,0 +1,159 @@
+body {
+    margin: 8px;
+}
+
+@media screen and (min-width: 1101px) {
+  body {
+    background-image: url("../pliki/matero.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+  }
+}
+
+a[href="tables.html"]:visited {
+  color: lightgreen;
+}
+
+a:link {
+  color: lightblue;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1500px){
+  h1 {
+    width: 100%;
+    height:50px;
+    text-align: center;
+  }
+
+  #dsc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 1499px) {
+  h1 {
+    width: 100%;
+    height:50px;
+    text-align: left;
+  }
+
+  #dsc {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  body {
+    background: white;
+  }
+}
+
+body > section > nav > a > img {
+  float: right;
+}
+
+#back_to_top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+#teat_types_header {
+  font-size: 2em;
+  clear: both;
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+#tytul {
+  text-shadow: #FC0 1px 0 10px;
+}
+
+#div_border {
+  width: 300px;
+  height: 300px;
+  border-color: hsla(259, 61%, 59%, 0.5);
+  border-style: solid;
+  border-radius: 50px 50px 300px 50px;
+  -webkit-border-radius: 50px 50px 300px 50px;
+  -moz-border-radius: 50px 50px 300px 50px;
+  -o-border-radius: 50px 50px 300px 50px;
+  -ms-border-radius: 50px 50px 300px 50px;
+  background-color: rgba(0, 100, 255, 0.25);
+  text-align: center;
+}
+
+#dsc {
+  -webkit-box-shadow: 22px 5px 68px 3px rgba(99, 101, 158, 1);
+  -moz-box-shadow: 22px 5px 68px 3px rgba(99, 101, 158, 1);
+  box-shadow: 22px 5px 68px 3px rgba(99, 101, 158, 1);
+}
+
+#img_container {
+  border: solid 1px black;
+  width: 500px;
+  height: 200px;
+  padding: 30px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  background-image: url("../pliki/tile_background.jpg");
+  background-position: bottom;
+  background-origin: padding-box;
+  background-repeat: repeat-x;
+}
+
+.limited_width_section {
+  width: 800px;
+  position: relative;
+  top: 20px;
+}
+
+.animated_img {
+  animation-duration: 1s;
+  animation-name: popin;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes popin {
+  from {
+    width: 300px;
+    height: 200px;
+  }
+
+  50% {
+    width: 225px;
+    height: 150px;
+  }
+
+  to {
+    width: 150px;
+    height: 100px;
+  }
+}
+
+p:only-child {
+  color: red;
+}
+
+:target h2{
+  font-size: 3em;
+}
+
+h2 {
+  transition: font-size 1s;
+  -webkit-transition: font-size 1s;
+  -moz-transition: font-size 1s;
+  -o-transition: font-size 1s;
+  -ms-transition: font-size 1s;
+}

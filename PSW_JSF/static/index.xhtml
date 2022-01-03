@@ -14,7 +14,9 @@
           czarna herbata, biala herbata, rodzaje herbat, informacje"></meta>
     <meta name="description" content="Na tej stronie znajdują się
           informacje dotyczące róznych rodzajów herbaty."></meta>
-    <link rel="stylesheet" href="styles/style.css"/>
+    <link type="text/css" rel="stylesheet" href="/styles/style.css"/>
+    <h:outputStylesheet name="index.css" library="css"/>
+    <script src="/js/index.js" type="text/javascript"></script>
 </h:head>
 
 <h:body>
@@ -28,7 +30,7 @@
 
     <section class="limited_width_section">
         <nav>
-            <a href="tables.php"><img src="pliki/zaparzanie.webp" alt="Zaparzanie" height="200" width="300" class="animated_img"/></a>
+            <a href="tables.php"><h:graphicImage name="zaparzanie.webp" library="images" alt="Zaparzanie" height="200" width="300" class="animated_img"/></a>
             <ul>
                 <li><a href="tables.php">Zaparzanie</a></li>
                 <li><a href="form.php">Amkieta herbatowa</a></li>
