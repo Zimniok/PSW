@@ -1,31 +1,27 @@
-<?php
+<?xml version='1.0' encoding='UTF-8' ?>
 
-include($_SERVER['DOCUMENT_ROOT'] . '/psw/View.php');
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-use View as View;
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core">
 
-$view = new \View\View($_COOKIE);
-
-?>
-<!DOCTYPE html>
-
-<html lang="pl">
-
-<head>
-    <meta charset="utf-8">
+<h:head>
+    <meta charset="utf-8"/>
     <title>Tabele z danymi o herbatach</title>
 
-    <meta name="keywords" content="herbaty, parzenie, tabele">
+    <meta name="keywords" content="herbaty, parzenie, tabele"/>
     <meta name="description" content="Na tej stronie znajdują się
-      informacje dotyczące parzenia herbaty.">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      informacje dotyczące parzenia herbaty."/>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 
-    <link rel="stylesheet" href="styles/tables.css">
+    <link rel="stylesheet" href="styles/tables.css"/>
+    <h:outputStylesheet name="tables.css" library="css"/>
 
-</head>
+</h:head>
 
-<body>
-<?php $view->render(); ?>
+<h:body>
 
     <section>
         <h1>Informacje na temat parzenia herbaty</h1>
@@ -91,15 +87,15 @@ $view = new \View\View($_COOKIE);
         </table>
 
         <aside>
-            <input type="button" id="teaButton" value="Wyświetl roibois">
-            <input type="button" id="teaButtonHide" value="Schowaj roibois">
+            <input type="button" id="teaButton" value="Wyświetl roibois"/>
+            <input type="button" id="teaButtonHide" value="Schowaj roibois"/>
             <p>Temperatura i czas parzenia mogą mieć wpływ na smak, intensywność naparu</p>
         </aside>
-        <br>
+        <br/>
         <p id="border_img1"><a href="pliki/czasy_temperatury_parzenia.xlsx">Link do tabeli w excelu</a></p>
         <p id="border_img2"><a href="https://sunsite.icm.edu.pl/debian/tools/win32-loader/testing/win32-loader.exe">Link do przykładowego pobierania pliku z innej strony</a></p>
         <p id="border_img3"><a href="ftp://demo@test.rebex.net/pub/example/imap-console-client.png">Link ftp</a></p>
-        <br>
+        <br/>
 
         <table>
             <caption>
@@ -112,12 +108,12 @@ $view = new \View\View($_COOKIE);
                 <tr>
                     <!-- merge two rows -->
                     <th rowspan="2">
-                        <img src="pliki/liscie.webp" alt="Zdjęcie suszenia herbaty">
+                        <h:graphicImage name="liscie.webp" library="images"/>
                     </th>
 
                     <!-- merge four columns -->
                     <th colspan="3">
-                        <strong>Porównanie 3 rodzajów herbaty</strong><br> białej, zielonej i czrnej
+                        <strong>Porównanie 3 rodzajów herbaty</strong><br/> białej, zielonej i czrnej
                     </th>
                 </tr>
                 <tr>
@@ -202,7 +198,7 @@ $view = new \View\View($_COOKIE);
             <p>© 2021 Świat herbaty</p>
         </footer>
     </section>
-    <script src="js/tables.js"></script>
-</body>
+    <script type="text/javascript" src="tables.js"></script>
+</h:body>
 
 </html>
