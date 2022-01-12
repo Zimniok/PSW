@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Podsumowanie zamówienia</title>
+    </h:head>
+    <h:body>
+        <h1>Dziękujemy za złożenie zamówienia!</h1>
+        <h:outputText value="Opłata za całe zamówienie: #{cartBean.finalSummary} zł"/>
+        <br/>
+        <h:button outcome="sklep" value="Powrót do listy produktów"/>
+    </h:body>
+</html>
+

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>Sklep</title>
+    </h:head>
+    <h:body>
+        <h1>Sklep</h1>
+        <br/>
+        <h3>Dostępne kategorie:</h3>
+        <h:form>
+            <h:selectOneRadio id="category" value="#{categoryBean.category}">
+                <f:selectItem itemLabel="Zielona herbata" itemValue="green"/>
+                <f:selectItem itemLabel="Czarna herbata" itemValue="black"/>
+                <f:ajax listener="#{categoryBean.categoryChanged}" render="produkty"/>
+            </h:selectOneRadio>
+            <h3>Dostępne produkty:</h3>
+            <h:panelGroup id="produkty">
+                <h:selectManyCheckbox value="#{categoryBean.selectedProducts}" rendered="#{categoryBean.isGreen}">
+                    <c:forEach var="item" items="#{categoryBean.greenTeas.keySet()}">
+                        <f:selectItem itemLabel="#{item}, #{categoryBean.greenTeas.get(item)} zł" itemValue="#{item}"/>
+                    </c:forEach>
+                </h:selectManyCheckbox>
+                <h:selectManyCheckbox value="#{categoryBean.selectedProducts}" rendered="#{categoryBean.isBlack}">
+                    <c:forEach var="item" items="#{categoryBean.blackTeas.keySet()}">
+                        <f:selectItem itemLabel="#{item}, #{categoryBean.blackTeas.get(item)} zł" itemValue="#{item}"/>
+                    </c:forEach>
+                </h:selectManyCheckbox>
+            </h:panelGroup>
+            <h:commandButton value="Dodaj do koszyka" action="#{cartBean.addProducts(categoryBean.category, categoryBean.selectedProducts)}"/>
+        </h:form>
+        <h:button value="Przejdź do koszyka" outcome="koszyk"/>
+        <br/>
+        <h:outputText value="Liczba produktów w koszyku: #{cartBean.count}"/>
+    </h:body>
+</html>
+
