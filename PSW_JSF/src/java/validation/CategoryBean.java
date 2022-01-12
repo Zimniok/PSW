@@ -22,25 +22,22 @@ public class CategoryBean implements Serializable {
     private String category = "";
     public static final HashMap< String, HashMap<String, Double> > categoriesMap =
       new HashMap< String, HashMap<String, Double> >();
-    private static HashMap<String, Double> products = new HashMap<>();
     private String[] selectedProducts = {};
     private Boolean isGreen = false;
     private Boolean isBlack = false;
     
     static {
         categoriesMap.put("green", new HashMap<>());
-        categoriesMap.get("green").put("Zielona 1", 13.23);
-        categoriesMap.get("green").put("Zielona 2", 25.50);
-        categoriesMap.get("green").put("Zielona 3", 11.99);
+        categoriesMap.get("green").put("Polskie Zioła", 13.23);
+        categoriesMap.get("green").put("Fancy truskawkowa", 25.50);
+        categoriesMap.get("green").put("Torebkowa", 11.99);
         
         categoriesMap.put("black", new HashMap<>());
-        categoriesMap.get("black").put("Czarna 1", 8.77);
-        categoriesMap.get("black").put("Czarna 2", 35.68);
-        categoriesMap.get("black").put("Czarna 3", 15.00);
-        categoriesMap.get("black").put("Czarna 4", 11.11);
-        categoriesMap.get("black").put("Czarna 5", 22.22);
-        
-        products = categoriesMap.get("green");
+        categoriesMap.get("black").put("Torebkowa", 8.77);
+        categoriesMap.get("black").put("Fancy czarna", 35.68);
+        categoriesMap.get("black").put("Polskie Zioła", 15.00);
+        categoriesMap.get("black").put("Ceylon", 11.11);
+        categoriesMap.get("black").put("Earl Gray", 22.22);
     }
     
     public void categoryChanged(AjaxBehaviorEvent e) {
@@ -59,14 +56,6 @@ public class CategoryBean implements Serializable {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public HashMap<String, Double> getProducts() {
-        return products;
-    }
-
-    public void setProducts(HashMap<String, Double> products) {
-        this.products = products;
     }
 
     public String[] getSelectedProducts() {
