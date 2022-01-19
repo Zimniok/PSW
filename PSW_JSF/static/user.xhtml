@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Dane użytkownika</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="common.xhtml">
+            <ui:define name="content">
+                <h:panelGroup rendered="${userBean.loggedIn}">
+                    <h1>Zalogowano jako: ${userBean.username}</h1>
+                    <h:form>
+                        <h:commandButton action="${userBean.logout()}" value="Logout"/>
+                    </h:form>
+                    <br/>
+                    <h:form><p><h:commandButton value="Dodaj wpis" action="dodaj_wpis"/></p></h:form>
+                    <h:form>
+                        <h:dataTable value="#{userBean.wpisy}" var="wpisy"
+                                     rowClasses="oddRows,evenRows" headerClass="header"
+                                     styleClass="table" cellpadding="5" cellspacing="0">
+                            <h:column>
+                                <f:facet name="header">Tytuł</f:facet>
+                                    #{wpisy.TYTUL}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Treść</f:facet>
+                                    #{wpisy.TRESC}
+                            </h:column>
+                            <h:column>
+                                <h:commandButton value="usuń" action="${userBean.deleteWpis(wpisy.ID)}"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </h:panelGroup>
+                <h:panelGroup rendered="${!userBean.loggedIn}">
+                    <h:form>
+                        <h1>Panel logowania:</h1>
+                        <h:panelGrid columns="3">
+                            <h:outputText value="Username: "/>
+                            <h:inputText id="usernameInputText" required="true"
+                                         requiredMessage="Wprowadź nazwę użytkownika."
+                                         value="${userBean.username}"/>
+                            <h:message for="usernameInputText"/>
+                            <h:outputText value="Password: "/>
+                            <h:inputSecret id="passwordInputSecret" required="true"
+                                           requiredMessage="Wprowadź hasło."
+                                           value="${userBean.password}"/>
+                            <h:message for="passwordInputSecret"/>
+                        </h:panelGrid>
+                        <h:commandButton value="Login"/>
+                    </h:form>
+                </h:panelGroup>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

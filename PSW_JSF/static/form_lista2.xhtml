@@ -23,7 +23,7 @@
                validatorMessage="Imię nie może być dłuższe niż 30 znaków.">
                <f:validateLength maximum="30" />
             </h:inputText>
-            <h:message for="nameInputText" styleClass="error"/>
+            <h:message id="nameMessage" for="nameInputText" styleClass="error"/>
             <h:outputText value="E-mail:"/>
             <h:inputText id="emailInputText" required="true"
                requiredMessage="Please enter a valid e-mail address"
@@ -32,7 +32,7 @@
                <f:validateRegex pattern=
                   "\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
             </h:inputText>
-            <h:message for="emailInputText" styleClass="error"/>
+            <h:message id="emailMessage" for="emailInputText" styleClass="error"/>
             <h:outputText value="Miesiąc urodzenia:"/>
             <h:selectOneMenu id="month" required="true" requiredMessage="Wybierz miesiąc urodzenia"
                              validatorMessage="Wybierz miesiąc urodzenia!!!"
@@ -52,14 +52,14 @@
                 <f:selectItem itemLabel="Grudzień" itemValue="Grudzień"/>
                 <f:validateRequired/>
             </h:selectOneMenu>
-            <h:message for="month" styleClass="error"/>
+            <h:message id="monthMessage" for="month" styleClass="error"/>
             <h:outputText value="Płeć"/>
             <h:selectOneRadio id="gender" required="true" requiredMessage="Wybierz plec"
                               value="#{validationBean.gender}">
                 <f:selectItem itemLabel="Mężczyzna" itemValue="M"/>
                 <f:selectItem itemLabel="Kobieta" itemValue="K"/>
             </h:selectOneRadio>
-            <h:message for="gender" styleClass="error"/>
+            <h:message id="genderMessage" for="gender" styleClass="error"/>
             <h:outputText value="Phone:"/>
             <h:inputText id="phoneInputText" required="true"
                requiredMessage="Please enter a valid phone number"
@@ -68,28 +68,31 @@
                <f:validateRegex pattern=
                   "(\+\d{2,4})?\d{9}" />
             </h:inputText>
-            <h:message for="phoneInputText" styleClass="error"/>
+            <h:message id="phoneMessage" for="phoneInputText" styleClass="error"/>
             <h:outputText value="Ulubiona herbata"/>
             <h:inputText id="herbataInput" required="true" validator="HerbataValidator"
                          requiredMessage="Podaj ulubioną herbatę" value="#{validationBean.tea}"/>
-            <h:message for="herbataInput"/>
+            <h:message id="herbataMessage" for="herbataInput"/>
             <h:outputText value="Wiek:"/>
             <h:inputText id="wiekInput" requiredMessage="Podaj wiek" required="true"
                          validatorMessage="Wiek nie znajduje się w przedziale 10-100"
                          value="#{validationBean.age}">
                 <f:validateLongRange minimum = "10" maximum = "100"/>
             </h:inputText>
-            <h:message for="wiekInput"/>
+            <h:message id="wiekMessage" for="wiekInput"/>
             <h:outputText value="Budżet na herbatę:"/>
             <h:inputText id="budzetInput" requiredMessage="Podaj budżet" required="true"
                          validatorMessage="Budżet nie znajduje się w rozsądnym przedziale"
                          value="#{validationBean.budget}">
                 <f:validateDoubleRange minimum = "10.75" maximum = "99.99"/>
             </h:inputText>
-            <h:message for="budzetInput"/>
+            <h:message id="budzetMessage" for="budzetInput"/>
          </h:panelGrid>
-         <h:commandButton value="Submit"/>
-         <h:outputText escape="false" value="#{validationBean.result}"/>
+         <h:commandButton value="Submit">
+             <f:ajax execute="nameInputText emailInputText month gender phoneInputText herbataInput wiekInput budzetInput" 
+                     render="nameMessage emailMessage monthMessage genderMessage phoneMessage herbataMessage wiekMessage budzetMessage resultOutputText"/>
+         </h:commandButton>
+         <h:outputText id="resultOutputText" escape="false" value="#{validationBean.result}"/>
       </h:form>
    </h:body>
 </html>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Dostępne herbaty</title>
+        <h:outputStylesheet library="css" name="data-table.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="common.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <h1>Lista dostępnych herbat</h1>
+                    <h:dataTable value="#{productInfoBean.herbaty}" var="herbaty"
+                                 rowClasses="oddRows,evenRows" headerClass="header"
+                                 styleClass="table" cellpadding="5" cellspacing="0">
+                        <h:column>
+                            <f:facet name="header">Nazwa</f:facet>
+                                        #{herbaty.Nazwa}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Kategoria</f:facet>
+                                        #{herbaty.Kategoria eq "C" ? "Czarna herbata" : "Zielona herbata"}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Cena</f:facet>
+                                        #{herbaty.Cena} zł/5g
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Szczegóły</f:facet>
+                                <h:commandButton value="Przejdź do opisu" action="${productInfoBean.info(herbaty.Nazwa, herbaty.Opis, herbaty.Kategoria, herbaty.Cena)}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

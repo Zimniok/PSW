@@ -30,10 +30,10 @@ public class CategoryBean implements Serializable {
         categoriesMap.put("green", new HashMap<>());
         categoriesMap.get("green").put("Polskie Zioła", 13.23);
         categoriesMap.get("green").put("Fancy truskawkowa", 25.50);
-        categoriesMap.get("green").put("Torebkowa", 11.99);
+        categoriesMap.get("green").put("Zielona torebkowa", 11.99);
         
         categoriesMap.put("black", new HashMap<>());
-        categoriesMap.get("black").put("Torebkowa", 8.77);
+        categoriesMap.get("black").put("Czarna torebkowa", 8.77);
         categoriesMap.get("black").put("Fancy czarna", 35.68);
         categoriesMap.get("black").put("Polskie Zioła", 15.00);
         categoriesMap.get("black").put("Ceylon", 11.11);

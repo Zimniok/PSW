@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Dodawanie wpisu</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="common.xhtml">
+            <ui:define name="content">
+                <h1>Podaj dane nowego wpisu</h1>
+                <h:form>
+                   <h:panelGrid columns="3">
+                      <h:outputText value="Tytuł:"/>
+                      <h:inputText id="tytulInputText" required="true"
+                         requiredMessage="Podaj tytuł"
+                         value="#{wpisBean.tytul}" maxlength="20"
+                         validatorMessage="Tytuł nie może być dłuższy niż 20 znaków">
+                      </h:inputText>
+                      <h:message for="tytulInputText" styleClass="error"/>
+                      <h:outputText value="Treść:"/>
+                      <h:inputText id="trescInputText" required="true"
+                         requiredMessage="Podaj treść"
+                         value="#{wpisBean.tresc}" maxlength="1000"
+                         validatorMessage="Treść nie może być dłuższa niż 1000 znaków">
+                      </h:inputText>
+                      <h:message for="trescInputText" styleClass="error"/>
+                   </h:panelGrid>
+                   <h:commandButton value="Zapisz wpis"
+                      action="#{wpisBean.save}"/>
+                </h:form>
+                <h:outputLink value="user.xhtml">Powrót</h:outputLink>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
